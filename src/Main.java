@@ -2,10 +2,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Personas[] personas = new Personas[5];
+        Personas[] personas = new Personas[2];
+
         System.out.println("Ingrese los datos de las 5 personas");
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 2; i++) {
 
             System.out.println("Pernonas" + (i + 1) + ":");
             System.out.println("Nombre: ");
@@ -28,7 +29,7 @@ public class Main {
         System.out.println("Promedio de Edad: " + promedioEdad);
         System.out.println("\nCantidad de personas de genero ");
         System.out.println("\nMasculino: " + ContarGeneros(personas, "Masculino"));
-        System.out.println("Femenino: " + ContarGeneros(personas, "Femenino"));
+        System.out.println("\nFemenino: " + ContarGeneros(personas, "Femenino"));
 
 
 
@@ -45,18 +46,15 @@ public class Main {
 
     public static int ContarGeneros(Personas[] personas, String generocontado) {
         int contador = 0;
+
         for (Personas persona : personas) {
-            System.out.println("Comparando '" + persona.getGenero().trim() + "' con '" + generocontado.trim() + "'");
+            System.out.println(persona.getGenero());
 
-
-            if (persona.getGenero().equalsIgnoreCase(generocontado)) {
-                contador++;
-
-            }
-
+            //if (persona.getGenero().equalsIgnoreCase(generocontado)) {
+                //contador++;
+            //}
         }
-
         return contador;
-
     }
+
 }
